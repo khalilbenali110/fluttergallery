@@ -10,7 +10,12 @@ class PageMeteo extends StatelessWidget {
 
       ),
       body: Center(
-          child:Text('Meteo')
+          child:Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Meteo")
+            ],
+          )
       ),
     );
   }

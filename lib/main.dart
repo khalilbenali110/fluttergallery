@@ -38,19 +38,28 @@ class PageDrawer extends StatelessWidget {
     return Drawer(
       child:ListView(
         children: [
-          SizedBox(
-            height: 250,
-          child:DrawerHeader(decoration: BoxDecoration(
-            color:Colors.orange
-          ), child: CircleAvatar(
-            backgroundColor: Colors.white,
-          ),)),
+          DrawerHeader(decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [Colors.white,Colors.deepOrange])
+          ),
+            child: CircleAvatar(
+            backgroundImage: AssetImage("assets/logo.png"),
+              radius:50 ,
+          ),),
           ListTile(
-            title:Text('Gallery') ,
+            title:Text('Home') ,
             leading: Icon(Icons.home),
             trailing: Icon(Icons.arrow_right),
             onTap: (){
               Navigator.pushNamed(context, "/gallery");
+            },
+          ),
+
+          ListTile(
+            title:Text('Meteo') ,
+            leading: Icon(Icons.shield_moon),
+            trailing: Icon(Icons.arrow_right),
+            onTap: (){
+              Navigator.pushNamed(context, "/meteo");
             },
           )
         ],
